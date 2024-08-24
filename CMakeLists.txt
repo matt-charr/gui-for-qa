@@ -142,7 +142,7 @@ DESTINATION
 if (IMGUI_BUILD_BACKEND_OPENGL3)
     # imgui OpenGL3
     project(imgui_opengl3)
-    set(IMGUI_BACKEND_OPENGL3_SRC backends/imgui_impl_opengl3.cpp)
+    set(IMGUI_BACKEND_OPENGL3_SRC imgui/backends/imgui_impl_opengl3.cpp)
     # OpenGL
     if (NOT TARGET glfw)
         find_package(OpenGL REQUIRED)
@@ -203,7 +203,7 @@ endif()
 if (IMGUI_BUILD_BACKEND_GLFW)
     # imgui glfw
     project(imgui_glfw)
-    set(IMGUI_BACKEND_GLFW_SRC backends/imgui_impl_glfw.cpp)
+    set(IMGUI_BACKEND_GLFW_SRC imgui/backends/imgui_impl_glfw.cpp)
     # glfw
     set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
     set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
@@ -268,7 +268,7 @@ install(
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 install(
-    FILES ${PROJECT_SOURCE_DIR}/backends/imgui_impl_glfw.h ${PROJECT_SOURCE_DIR}/backends/imgui_impl_opengl3.h
+    FILES ${PROJECT_SOURCE_DIR}/imgui/backends/imgui_impl_glfw.h ${PROJECT_SOURCE_DIR}/imgui/backends/imgui_impl_opengl3.h
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/backends
 )
 install(
