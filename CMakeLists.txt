@@ -52,6 +52,7 @@ file(
     ${PROJECT_SOURCE_DIR}/imgui/*.cpp
 )
     # implot.
+add_definitions(-DIMGUI_DEFINE_MATH_OPERATORS)
 file(
     GLOB IMPLOT_SRC
     ${PROJECT_SOURCE_DIR}/implot/*.cpp
