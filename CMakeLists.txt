@@ -52,7 +52,6 @@ file(
     ${PROJECT_SOURCE_DIR}/imgui/*.cpp
 )
     # implot.
-add_definitions(-DIMGUI_DEFINE_MATH_OPERATORS)
 file(
     GLOB IMPLOT_SRC
     ${PROJECT_SOURCE_DIR}/implot/*.cpp
@@ -89,7 +88,7 @@ else()
     add_library(${IMGUI_PROJECT} SHARED ${IMGUI_SRC} ${IMPLOT_SRC} ${IMFILEBROWSER_SRC})
 endif()
 target_include_directories(${IMGUI_PROJECT} PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>/imgui>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/implot>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/imgui-filebrowser>
     $<INSTALL_INTERFACE:include>
