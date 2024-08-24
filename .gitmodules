@@ -1,0 +1,9 @@
+[submodule "implot"]
+	path = implot
+	url = https://github.com/epezent/implot.git
+[submodule "imgui-filebrowser"]
+	path = imgui-filebrowser
+	url = https://github.com/AirGuanZ/imgui-filebrowser.git
+[submodule "glfw"]
+	path = glfw
+	url = https://github.com/glfw/glfw.git
