@@ -263,15 +263,19 @@ if (IMGUI_BUILD_BACKEND_GLFW)
 endif()
 
 # install headers.
-install( # todo
-    DIRECTORY ${PROJECT_SOURCE_DIR}/include/
+install(
+    FILES ${IMGUI_INC}
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 install(
-    DIRECTORY ${PROJECT_SOURCE_DIR}/implot/include/
+    FILES ${PROJECT_SOURCE_DIR}/backends/imgui_impl_glfw.h ${PROJECT_SOURCE_DIR}/backends/imgui_impl_opengl3.h
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/backends
+)
+install(
+    FILES ${IMPLOT_INC}
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/implot
 )
 install(
-    DIRECTORY ${PROJECT_SOURCE_DIR}/imgui-filebrowser/include/
+    FILES ${IMFILEBROWSER_INC}
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/imgui-filebrowser
 )
