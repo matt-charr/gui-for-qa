@@ -209,7 +209,7 @@ if (IMGUI_BUILD_BACKEND_GLFW)
     set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
     set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
     set(IMGUI_DEPS_GLFW_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/glfw/include" CACHE PATH "imgui GLFW lib include dependence")
-    if (NOT TARGET glfw)
+    if (NOT TARGET glfw AND NOT qAPP_WEB)
         add_subdirectory(${PROJECT_SOURCE_DIR}/glfw)
     endif()
     # imgui glfw
@@ -218,7 +218,10 @@ if (IMGUI_BUILD_BACKEND_GLFW)
     else()
 	    add_library(imgui_glfw SHARED ${IMGUI_BACKEND_GLFW_SRC})
     endif()
-    target_link_libraries(imgui_glfw PUBLIC imgui glfw)
+    target_link_libraries(imgui_glfw PUBLIC imgui)
+    if (NOT qAPP_WEB)
+        target_link_libraries(imgui_glfw PUBLIC glfw)
+    endif ()
     target_include_directories(imgui_glfw PUBLIC 
         $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/backends>
         $<INSTALL_INTERFACE:include/backends>
