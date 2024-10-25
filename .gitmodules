@@ -1,0 +1,12 @@
+[submodule "imgui-for-qa"]
+	path = imgui-for-qa
+	url = https://github.com/matt-charr/imgui-for-qa.git
+[submodule "imgui-filebrowser-for-qa"]
+	path = imgui-filebrowser-for-qa
+	url = https://github.com/matt-charr/imgui-filebrowser-for-qa.git
+[submodule "glfw-for-qa"]
+	path = glfw-for-qa
+	url = https://github.com/matt-charr/glfw-for-qa.git
+[submodule "implot-for-qa"]
+	path = implot-for-qa
+	url = https://github.com/matt-charr/implot-for-qa.git

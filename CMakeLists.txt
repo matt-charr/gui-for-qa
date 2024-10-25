@@ -49,37 +49,37 @@ option(IMGUI_BUILD_BACKEND_WIN32 "Build the win32 backend" OFF)
     # imgui.
 file(
     GLOB IMGUI_SRC
-    ${PROJECT_SOURCE_DIR}/imgui/*.cpp
+    ${PROJECT_SOURCE_DIR}/imgui-for-qa/*.cpp
 )
     # implot.
 file(
     GLOB IMPLOT_SRC
-    ${PROJECT_SOURCE_DIR}/implot/*.cpp
+    ${PROJECT_SOURCE_DIR}/implot-for-qa/*.cpp
 )
     # imgui-filebrowser.
 file(
     GLOB IMFILEBROWSER_SRC
-    ${PROJECT_SOURCE_DIR}/imgui-filebrowser/*.cpp
+    ${PROJECT_SOURCE_DIR}/imgui-filebrowser-for-qa/*.cpp
 )
 
 # header files.
     # imgui.
 file(
     GLOB IMGUI_INC
-    ${PROJECT_SOURCE_DIR}/imgui/*.h
-    ${PROJECT_SOURCE_DIR}/imgui/*.hpp
+    ${PROJECT_SOURCE_DIR}/imgui-for-qa/*.h
+    ${PROJECT_SOURCE_DIR}/imgui-for-qa/*.hpp
 )
     # implot.
 file(
     GLOB IMPLOT_INC
-    ${PROJECT_SOURCE_DIR}/implot/*.h
-    ${PROJECT_SOURCE_DIR}/implot/*.hpp
+    ${PROJECT_SOURCE_DIR}/implot-for-qa/*.h
+    ${PROJECT_SOURCE_DIR}/implot-for-qa/*.hpp
 )
     # imgui-filebrowser.
 file(
     GLOB IMFILEBROWSER_INC
-    ${PROJECT_SOURCE_DIR}/imgui-filebrowser/*.h
-    ${PROJECT_SOURCE_DIR}/imgui-filebrowser/*.hpp
+    ${PROJECT_SOURCE_DIR}/imgui-filebrowser-for-qa/*.h
+    ${PROJECT_SOURCE_DIR}/imgui-filebrowser-for-qa/*.hpp
 )
 
 if(IMGUI_BUILD_STATIC)
@@ -88,12 +88,12 @@ else()
     add_library(${IMGUI_PROJECT} SHARED ${IMGUI_SRC} ${IMPLOT_SRC} ${IMFILEBROWSER_SRC})
 endif()
 target_include_directories(${IMGUI_PROJECT} PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/imgui>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/implot>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/imgui-filebrowser>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/imgui-for-qa>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/implot-for-qa>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/imgui-filebrowser-for-qa>
     $<INSTALL_INTERFACE:include>
-    $<INSTALL_INTERFACE:include/implot>
-    $<INSTALL_INTERFACE:include/imgui-filebrowser>
+    $<INSTALL_INTERFACE:include/implot-for-qa>
+    $<INSTALL_INTERFACE:include/imgui-filebrowser-for-qa>
 )
 
 # install exports
@@ -142,7 +142,7 @@ DESTINATION
 if (IMGUI_BUILD_BACKEND_OPENGL3)
     # imgui OpenGL3
     project(imgui_opengl3)
-    set(IMGUI_BACKEND_OPENGL3_SRC imgui/backends/imgui_impl_opengl3.cpp)
+    set(IMGUI_BACKEND_OPENGL3_SRC imgui-for-qa/backends/imgui_impl_opengl3.cpp)
     # OpenGL
     if (NOT TARGET glfw)
         find_package(OpenGL REQUIRED)
@@ -203,14 +203,14 @@ endif()
 if (IMGUI_BUILD_BACKEND_GLFW)
     # imgui glfw
     project(imgui_glfw)
-    set(IMGUI_BACKEND_GLFW_SRC imgui/backends/imgui_impl_glfw.cpp)
+    set(IMGUI_BACKEND_GLFW_SRC imgui-for-qa/backends/imgui_impl_glfw.cpp)
     # glfw
     set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
     set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
     set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
-    set(IMGUI_DEPS_GLFW_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/glfw/include" CACHE PATH "imgui GLFW lib include dependence")
+    set(IMGUI_DEPS_GLFW_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/glfw-for-qa/include" CACHE PATH "imgui GLFW lib include dependence")
     if (NOT TARGET glfw AND NOT qAPP_WEB)
-        add_subdirectory(${PROJECT_SOURCE_DIR}/glfw)
+        add_subdirectory(${PROJECT_SOURCE_DIR}/glfw-for-qa)
     endif()
     # imgui glfw
     if(IMGUI_BUILD_STATIC)
@@ -271,14 +271,14 @@ install(
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 install(
-    FILES ${PROJECT_SOURCE_DIR}/imgui/backends/imgui_impl_glfw.h ${PROJECT_SOURCE_DIR}/imgui/backends/imgui_impl_opengl3.h
+    FILES ${PROJECT_SOURCE_DIR}/imgui-for-qa/backends/imgui_impl_glfw.h ${PROJECT_SOURCE_DIR}/imgui-for-qa/backends/imgui_impl_opengl3.h
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/backends
 )
 install(
     FILES ${IMPLOT_INC}
-    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/implot
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/implot-for-qa
 )
 install(
     FILES ${IMFILEBROWSER_INC}
-    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/imgui-filebrowser
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/imgui-filebrowser-for-qa
 )
