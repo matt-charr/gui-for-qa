@@ -276,9 +276,9 @@ install(
 )
 install(
     FILES ${IMPLOT_INC}
-    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/implot-for-qa
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/implot
 )
 install(
     FILES ${IMFILEBROWSER_INC}
-    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/imgui-filebrowser-for-qa
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/imgui-filebrowser
 )
