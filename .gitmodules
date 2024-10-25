@@ -1,12 +1,12 @@
 [submodule "implot"]
 	path = implot
-	url = https://github.com/epezent/implot.git
+	url = https://github.com/epezent/implot-for-qa.git
 [submodule "imgui"]
 	path = imgui
-	url = https://github.com/ocornut/imgui.git
+	url = https://github.com/ocornut/imgui-for-qa.git
 [submodule "imgui-filebrowser"]
 	path = imgui-filebrowser
-	url = https://github.com/AirGuanZ/imgui-filebrowser.git
+	url = https://github.com/AirGuanZ/imgui-filebrowser-for-qa.git
 [submodule "glfw"]
 	path = glfw
-	url = https://github.com/glfw/glfw.git
+	url = https://github.com/glfw/glfw-for-qa.git
