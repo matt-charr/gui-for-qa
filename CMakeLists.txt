@@ -92,8 +92,8 @@ target_include_directories(${IMGUI_PROJECT} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/implot-for-qa>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/imgui-filebrowser-for-qa>
     $<INSTALL_INTERFACE:include>
-    $<INSTALL_INTERFACE:include/implot-for-qa>
-    $<INSTALL_INTERFACE:include/imgui-filebrowser-for-qa>
+    $<INSTALL_INTERFACE:include/implot>
+    $<INSTALL_INTERFACE:include/imgui-filebrowser>
 )
 
 # install exports
