@@ -10,4 +10,4 @@
 [submodule "imgui-for-qa"]
 	path = imgui-for-qa
 	url = https://github.com/matt-charr/imgui-for-qa.git
-	branch = docking
+	branch = main
