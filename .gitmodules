@@ -7,7 +7,3 @@
 [submodule "implot-for-qa"]
 	path = implot-for-qa
 	url = https://github.com/matt-charr/implot-for-qa.git
-[submodule "imgui-for-qa"]
-	path = imgui-for-qa
-	url = https://github.com/matt-charr/imgui-for-qa.git
-	branch = master
